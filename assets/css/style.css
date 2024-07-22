@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+:root {
+    --fcolor: #191919;
+    --hlcolor: #4477CE;
+
+    --drcolor: #161A30;
+    --dcolor: #31304D;
+    --lcolor: #6a6c70;
+    --lrcolor: #F0ECE5;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+    text-decoration: none;
+    user-select: none;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--drcolor);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 35px 50px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .5);
+    background: var(--dcolor);
+    animation: light-to-dark .4s ease-in-out;
+}
+
+.fheader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fheader i {
+    padding: 5px 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.ficons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.ficons i {
+    padding: 5px 10px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.fheader i:hover,
+.ficons i:hover,
+.hyper-color:hover,
+.input-field i:hover {
+    filter: brightness(.85);
+}
+
+.fheader i:active,
+.ficons i:active,
+.hyper-color:active,
+.input-field i:active {
+    filter: brightness(.75);
+}
+
+.font-normal {
+    font-size: 16px;
+}
+
+.font-color {
+    color: var(--lrcolor);
+    animation: flight-to-dark .4s ease-in-out;
+}
+
+.hyper-color {
+    color: var(--hlcolor);
+    font-size: 12px;
+}
+
+.hyper-color:first-child {
+    font-size: 16px;
+}
+
+.finputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-field {
+    border-bottom: 1px solid var(--lcolor);
+}
+
+.input-field i {
+    cursor: pointer;
+}
+
+
+.input-field input {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px 10px;
+    color: var(--lcolor);
+    font-weight: 400;
+    background: transparent;
+    transition: all .2s;
+}
+
+.submit-field {
+    width: 100%;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.submit-field input {
+    padding: 5px 0;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: var(--drcolor);
+    background: var(--lrcolor);
+    font-weight: 900;
+}
+
+.submit-field input:hover {
+    filter: brightness(.95);
+}
+
+.submit-field input:active {
+    filter: brightness(.85);
+}
+
+/*  */
+
+.dark {
+    background-color: var(--lrcolor);
+    animation: dark-to-light .4s ease-in-out;
+}
+
+.dark-font {
+    color: var(--fcolor);
+    animation: fdark-to-light .4s ease-in-out;
+}
+
+@keyframes dark-to-light {
+    0% {
+        background-color: var(--dcolor);
+    }
+    100% {
+        background-color: var(--lrcolor);
+    }
+}
+
+@keyframes light-to-dark {
+    0% {
+        background-color: var(--lrcolor);
+    }
+    100% {
+        background-color: var(--dcolor);
+    }
+}
+
+@keyframes fdark-to-light {
+    0% {
+        color: var(--lrcolor);
+    }
+    100% {
+        color: var(--fcolor);
+    }
+}
+
+@keyframes flight-to-dark {
+    0% {
+        color: var(--fcolor);
+    }
+    100% {
+        color: var(--lrcolor);
+    }
+}
